@@ -1,9 +1,9 @@
 import Productcard from "./Productcard"
 const data = [
-  { id: 0, img: 'src/assets/product__1.webp', name: 'dried Mango', price: '$500' },
-  { id: 1, img: 'src/assets/product__2.webp', name: 'Crunchy Crisps', price: '$300' },
-  { id: 2, img: 'src/assets/product__3.webp', name: 'Jewel Cranberries', price: '$200' },
-  { id: 3, img: 'src/assets/product__4.webp', name: 'Almond Organic', price: '$100' },
+  { id: 0, img: 'src/assets/product__1.webp', name: 'dried Mango', price: '500' },
+  { id: 1, img: 'src/assets/product__2.webp', name: 'Crunchy Crisps', price: '300' },
+  { id: 2, img: 'src/assets/product__3.webp', name: 'Jewel Cranberries', price: '200' },
+  { id: 3, img: 'src/assets/product__4.webp', name: 'Almond Organic', price: '100' },
 ]
 
 const FeatureSectionFruits = ({addToCart}) => {
@@ -25,7 +25,7 @@ const FeatureSectionFruits = ({addToCart}) => {
         <div>
           <img className="w-full h-full object-cover" src="src/assets/feature__1.webp" alt="banner" />
         </div>
-        {data.map(el => <Productcard key={el.id} img={el.img} name={el.name} price={el.price} addToCart={addToCart} />)}
+        {data.map(el => <Productcard key={el.id} img={el.img} name={el.name} price={el.price} />)}
       </div>
     </div>
   )

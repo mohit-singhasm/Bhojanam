@@ -30,25 +30,21 @@ const App = () => {
     }
   }
 
-  const addToCart = (img, name, price) => {
-    setProductDetails({ prodImg: img, prodName: name, prodPrice: price })
-  }
 
   // console.log(productDetails)
 
   return (
     <main>
-      <Navbar press={showCart} />
+      <Navbar />
       <Hero />
       <Category />
-      <FeatureSectionFruits addToCart={addToCart} />
-      <FeatureSectionBreakFast addToCart={addToCart} />
+      <FeatureSectionFruits />
+      <FeatureSectionBreakFast />
       <Banner />
       <BlogSection />
       <NewsLetterSection />
       <FeatureSection />
       <Footer />
-      <CartSection press={showCart} clss={addClass} productDetails={productDetails} />
     </main>
 
   )

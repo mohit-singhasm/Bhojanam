@@ -2,12 +2,20 @@ import { FcSearch } from 'react-icons/fc'
 import { AiOutlineUser, AiOutlineShoppingCart } from 'react-icons/ai'
 import CartcountBadge from './CartcountBadge'
 import { GiHamburgerMenu } from "react-icons/gi";
+import CartSection from './CartSection';
+import { useSelector, useDispatch } from 'react-redux';
+import { showCart } from '../features/cart-slice';
 
-function Navbar({ press }) {
+function Navbar() {
 
   // style={{position: 'fixed', zIndex: '9999', inset: '16px', pointerEvents: 'none'}}
+  const openCart = useSelector(state => state.cartReducer.openCart)
+  const quantity = useSelector(state => state.cartReducer.cartList)
+  const dispatch = useDispatch()
+
   return (
     <>
+      {openCart && <CartSection />}
       <div className='fixed z-[999] inset-4 pointer-events-none' ></div>
       <div className='sticky top-0 bg-white z-10'>
         <div className="container hidden lg:block">
@@ -21,10 +29,12 @@ function Navbar({ press }) {
               <div className='icon__wrapper cursor-pointer'>
                 <AiOutlineUser />
               </div>
-              <div className='icon__wrapper cursor-pointer relative' onClick={press}>
-                <AiOutlineShoppingCart />
-                <CartcountBadge size='w-[25px] h-[25px]' />
-              </div>
+              <button onClick={() => dispatch(showCart())}>
+                <div className='icon__wrapper cursor-pointer relative'>
+                  <AiOutlineShoppingCart />
+                  <CartcountBadge size='w-[25px] h-[25px]' count={quantity.length} />
+                </div>
+              </button>
             </div>
           </div>
         </div>
