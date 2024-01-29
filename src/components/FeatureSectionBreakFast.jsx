@@ -1,14 +1,10 @@
-import React from 'react'
-
 import Productcard from "./Productcard"
-const data = [
-  { id: 0, img: 'src/assets/product__5.webp', name: 'Fresh Tamato', price: '400' },
-  { id: 1, img: 'src/assets/product__2.webp', name: 'Crunchy Crisps', price: '300' },
-  { id: 2, img: 'src/assets/product__3.webp', name: 'Jewel Cranberries', price: '200' },
-  { id: 3, img: 'src/assets/product__4.webp', name: 'Almond Organic', price: '100' },
-]
+import { useSelector } from "react-redux"
 
-const FeatureSectionBreakFast = ({addToCart}) => {
+const FeatureSectionBreakFast = () => {
+
+  const data = useSelector(state => state.featureData.breakFast)
+
   return (
     <div className="container pt-16">
       <div className="lg:flex justify-between items-center">

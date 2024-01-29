@@ -4,9 +4,9 @@ const BlogCard = ({img, comment, title, date}) => {
   return (
     <div className='space-y-4'>
         <img className='rounded-lg hover:scale-105 transition-transform' src={img} alt="post" />
-        <div className='text-accent font-medium'>
+        <div className='text-accent font-medium flex justify-between'>
             <span>{date}</span>
-            <span>{comment}</span>
+            <span>Comments: {comment}</span>
         </div>
         <h3 className='font-bold text-xl'>{title}</h3>
     </div>
