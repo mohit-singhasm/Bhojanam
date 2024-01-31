@@ -20,8 +20,8 @@ function Navbar() {
       <div className='sticky top-0 bg-white z-10'>
         <div className="container hidden lg:block">
           <div className="flex justify-between items-center p-8">
-            <div className='bg-blue-400 rounded-lg flex justify-center items-center'>
-              <h1 className="text-4xl font-medium bg-[#f3211b] ps-3 text-white">BhoJanam</h1>
+            <div className='bg-accent rounded-lg flex justify-center items-center'>
+              <h1 className="text-2xl font-medium bg-[#f3211b] ps-3 text-white">BhoJanam</h1>
                 <img src="src/assets/logo.jpeg" alt="logo_img" width={100} />
             </div>
           <div className="relative w-full max-w-[500px]">
