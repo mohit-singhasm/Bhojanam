@@ -1,4 +1,5 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { toast } from "react-toastify"
 
 const initialState = {
     cartList: [
@@ -24,6 +25,7 @@ export const cartSlice = createSlice({
             } else {
                 state.cartList.push(item)
             }
+            toast.success('Added to Cart')
         },
         removeItem: (state, action) => {
             const existingItem = state.cartList.find((eitem) => eitem.name === action.payload.name)
@@ -34,6 +36,7 @@ export const cartSlice = createSlice({
             } else {
                 state.cartList = state.cartList.filter((item) => item.id !== action.payload.id)
             }
+            toast.error('Removed to Cart')
         },
         showCart: (state, action) => { 
             state.openCart = !state.openCart;

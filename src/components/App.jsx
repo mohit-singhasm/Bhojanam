@@ -13,25 +13,6 @@ import Navbar from "./Navbar"
 import NewsLetterSection from "./NewsLetterSection"
 
 const App = () => {
-  const [addClass, setAddClass] = useState('hidden')
-
-  const [productDetails, setProductDetails] = useState(
-    {
-      prodImg: '',
-      prodName: '',
-      prodPrice: ''
-    }
-  )
-
-  const showCart = (e) => {
-    setAddClass('')
-    if (addClass == '') {
-      setAddClass('hidden')
-    }
-  }
-
-
-  // console.log(productDetails)
 
   return (
     <main>

@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { IoClose } from 'react-icons/io5'
 import CartCardSection from './CartCardSection'
 import { useSelector, useDispatch } from 'react-redux'
@@ -8,15 +7,14 @@ import { showCart } from '../features/cart-slice'
 const CartSection = () => {
 
     const cartList = useSelector((state) => state.cartReducer.cartList)
-    const openCart = useSelector(state => state.cartReducer.openCart)
 
     const dispatch = useDispatch()
-    // console.log(cartList)
 
     return (
         <>
-            <div id='sdbr' className={`bg-[#0000007d] w-full h-screen fixed left-0 top-0 z-20`} >
-                <div className="max-w-full sm:max-w-[400px] w-full h-full bg-white absolute right-0 top-0 p-6">
+            <div id='sdbr' className={`w-full h-screen fixed left-0 top-0 z-20`}>
+                <div className='bg-[#0000007d] w-full h-screen' onClick={() => dispatch(showCart())}></div>
+                <div className="max-w-full sm:max-w-[400px] w-full h-full bg-white absolute right-0 top-0 p-6 z-40">
                     <button onClick={() => dispatch(showCart())}>
                         <IoClose id='closeCart' className='absolute right-0 top-0 m-6 text-[30px] cursor-pointer' />
                     </button>
