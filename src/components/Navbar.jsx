@@ -20,31 +20,32 @@ function Navbar() {
       <div className='sticky top-0 bg-white z-10'>
         <div className="container hidden lg:block">
           <div className="flex justify-between items-center p-8">
-            <h1 className="text-4xl font-medium bg-[#f3211b] ps-3 text-white flex justify-center items-center">BhoJanam
-            <img src="src/assets/logo.jpeg" alt="logo_img" width={100}/>
-            </h1>
-            <div className="relative w-full max-w-[500px]">
-              <input className="bg-[#f2f3f5] border-none outline-none px-6 py-3 rounded-[30px] w-full" type="text" placeholder="Search Product..." />
-              <FcSearch className='absolute top-0 right-0 mt-4 mr-5 text-xl' />
+            <div className='bg-blue-400 rounded-lg flex justify-center items-center'>
+              <h1 className="text-4xl font-medium bg-[#f3211b] ps-3 text-white">BhoJanam</h1>
+                <img src="src/assets/logo.jpeg" alt="logo_img" width={100} />
             </div>
-            <div className="flex gap-4">
-              <div className='icon__wrapper cursor-pointer'>
-                <AiOutlineUser />
+          <div className="relative w-full max-w-[500px]">
+            <input className="bg-[#f2f3f5] border-none outline-none px-6 py-3 rounded-[30px] w-full" type="text" placeholder="Search Product..." />
+            <FcSearch className='absolute top-0 right-0 mt-4 mr-5 text-xl' />
+          </div>
+          <div className="flex gap-4">
+            <div className='icon__wrapper cursor-pointer'>
+              <AiOutlineUser />
+            </div>
+            <button onClick={() => dispatch(showCart())}>
+              <div className='icon__wrapper cursor-pointer relative'>
+                <AiOutlineShoppingCart />
+                <CartcountBadge size='w-[25px] h-[25px]' count={quantity.length} />
               </div>
-              <button onClick={() => dispatch(showCart())}>
-                <div className='icon__wrapper cursor-pointer relative'>
-                  <AiOutlineShoppingCart />
-                  <CartcountBadge size='w-[25px] h-[25px]' count={quantity.length} />
-                </div>
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
+    </div >
 
 
-      {/* for mobile phones */}
-      <div className="sticky top-0 bg-white z-10">
+      {/* for mobile phones */ }
+      < div className = "sticky top-0 bg-white z-10" >
         <div className="container p-8 lg:hidden">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-6">
@@ -62,7 +63,7 @@ function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }
